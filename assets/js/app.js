@@ -26,7 +26,7 @@ d3.csv("assets/data/data.csv").then(function(Data) {
     // console.log("id", id);
     // var state = Data.map(data => data.state);
     // console.log("state", state);
-    // var abbr = Data.map(data => data.abbr);
+     var abbr = Data.map(data => data.abbr);
     // console.log("abbr", abbr);
     // var age = Data.map(data => data.age);
     // console.log("age", age);
@@ -72,17 +72,15 @@ var circlesGroup = chartGroup.selectAll("circle")
 .attr("r", "15")
 .attr("fill", "blue")
 .attr("opacity", ".5")
-.text(d =>d.abbr)
 
-var labels = chartGroup.selectAll("text")
+var labels = chartGroup.selectAll("labels")
 .data(Data)
 .enter()
 .append("text")
 .attr("x",d => xScale(d.age)-10)
 .attr("y",d => yScale(d.obesity)+5)
-.text(d =>d.abbr)
-.attr("font-size","15px")
-.attr("fill","black");
+.text(d=>d.abbr)
+
 
 
     // Create axes labels
